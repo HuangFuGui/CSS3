@@ -1,0 +1,17 @@
+@charset "UTF-8";
+body {
+  font-family: "微软雅黑";
+}
+
+ul li a {
+  display: block;
+}
+
+ul li a {
+  display: block;
+  color: #ddd;
+}
+
+a {
+  color: #ddd;
+}
