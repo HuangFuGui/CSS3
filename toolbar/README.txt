@@ -7,3 +7,5 @@
 	js模块化管理！
 	<script src="js/require.js" data-main="js/main"></script>:
 		data-main="js/main"为入口文件，即require.js加载完毕后立刻调用的文件
+
+3.使用背景图片的方式

@@ -1,21 +1,4 @@
-body{
-	font-family:"微软雅黑";
-}
-ul li a {
-	display:block;
-}
 
-$color:#ddd;
+@import "mixin";
 
-ul{
-	li{
-		a{
-			display:block;
-			color:$color;
-		}
-	}
-}
-
-a{
-	color:$color;
-}
+@import "toolbar";
