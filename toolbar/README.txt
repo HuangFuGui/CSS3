@@ -9,3 +9,13 @@
 		data-main="js/main"为入口文件，即require.js加载完毕后立刻调用的文件
 
 3.使用背景图片的方式
+	开发简单，但是维护起来不方便。
+
+4.使用图表字体的方式
+	https://icomoon.io/app/#/select
+	Sublime注释键已修改为：ctrl+d
+	a标签内的**所有子元素**都是绝对定位的，所以a标签本身应为相对定位成为一个相对点。
+	图标字体可以像文字一样处理：
+		background-color:#d0d6d9;
+		font-size:30px;
+		line-height:$toolbar-size;

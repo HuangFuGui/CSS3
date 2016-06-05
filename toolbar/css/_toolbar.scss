@@ -1,64 +1,140 @@
+// $toolbar-size:52px;
+// .toolbar{
+// 	/*a标签的容器*/
+// 	position:fixed;  //固定定位
+// 	left:50%;
+// 	bottom:5px;
+// 	margin-left:-$toolbar-size / 2;  //左移工具条长度的一半距离
+// }
+// .toolbar-item,.toolbar-layer{
+// 	//引入整张背景图片，无重复
+// 	background-image: url("../img/toolbar.png");
+// 	background-repeat: no-repeat;
+// }
+// .toolbar-item{
+// 	/*a标签*/
+// 	position:relative;   //span.toolbar-layer的相对点
+// 	display:block;  //a标签体现宽与高，让其为块元素
+// 	width:$toolbar-size;
+// 	height:$toolbar-size;
+// 	margin-top: 1px;
+// 	@include transition(background-position 0.5s);
+
+// 	//鼠标放在a标签上显示二维码
+// 	&:hover{
+// 		.toolbar-layer{
+// 			@include opacity(1);
+// 			//transform:scale(1);
+// 			@include scale(scale(1));
+// 		}
+// 	}
+// }
+// .toolbar-item-weixin{
+// 	@include toolbar-item(-798px,-860px);
+// 	.toolbar-layer{
+// 		height:212px;
+// 		background-position: 0 0;
+// 	}
+// }
+
+// .toolbar-item-feedback{
+// 	@include toolbar-item(-426px,-488px);
+// }
+// .toolbar-item-app{
+// 	@include toolbar-item(-550px,-612px);
+// 	.toolbar-layer{
+// 		height:194px;
+// 		background-position: 0 -222px;
+// 	}
+// }
+// .toolbar-item-top{
+// 	@include toolbar-item(-674px,-736px);
+// }
+// .toolbar-layer{
+// 	/*二维码*/
+// 	position:absolute;  //相对于父元素的绝对定位
+// 	right:$toolbar-size - 6;  //距离右侧的宽度，运算符两边要有空格
+// 	bottom:-10px;
+// 	width:172px;
+// 	@include opacity(0);  //透明度为0
+// 	@include transform-origin(95% 95%);
+// 	//transform:scale(0.01);
+// 	@include scale(scale(0.01));    //最小  
+// 	@include transition(all 0.5s);  //在这里all包括透明度，大小的变化
+// }
+
+
 $toolbar-size:52px;
-.toolbar{
-	/*a标签的容器*/
-	position:fixed;  //固定定位
-	left:50%;
-	bottom:5px;
-	margin-left:-$toolbar-size / 2;  //左移工具条长度的一半距离
-}
-.toolbar-item,.toolbar-layer{
-	//引入整张背景图片，无重复
-	background-image: url("../img/toolbar.png");
-	background-repeat: no-repeat;
-}
-.toolbar-item{
-	/*a标签*/
-	position:relative;   //span.toolbar-layer的相对点
-	display:block;  //a标签体现宽与高，让其为块元素
+.toolbar-item,.toolbar-btn,.toolbar-icon,.toolbar-text{
 	width:$toolbar-size;
 	height:$toolbar-size;
+}
+.toolbar-icon,.toolbar-text{
+	position:absolute;
+	left:0;
+	color:#fff;
+	text-align:center;
+	@include transition(top 0.6s);
+}
+.toolbar{
+	position:fixed;
+	left:50%;
+	bottom:5px;
+	margin-left:-$toolbar-size / 2;
+}
+.toolbar-item{
+	position:relative;  
+	display:block;  
 	margin-top: 1px;
-	@include transition(background-position 0.5s);
-
-	//鼠标放在a标签上显示二维码
 	&:hover{
+		.toolbar-icon{
+			top:-$toolbar-size;
+		}
+		.toolbar-text{
+			top:0;
+		}
 		.toolbar-layer{
 			@include opacity(1);
-			//transform:scale(1);
 			@include scale(scale(1));
 		}
 	}
 }
-.toolbar-item-weixin{
-	@include toolbar-item(-798px,-860px);
-	.toolbar-layer{
-		height:212px;
-		background-position: 0 0;
-	}
+.toolbar-btn{
+	position:absolute;
+	left:0;
+	top:0;
+	overflow:hidden;  //设置溢出隐藏
 }
-
-.toolbar-item-feedback{
-	@include toolbar-item(-426px,-488px);
+.toolbar-icon{
+	top:0;
+	background-color:#d0d6d9;   /*图标字体可以像文字一样处理*/
+	font-size:30px;
+	line-height:$toolbar-size;
 }
-.toolbar-item-app{
-	@include toolbar-item(-550px,-612px);
-	.toolbar-layer{
-		height:194px;
-		background-position: 0 -222px;
-	}
-}
-.toolbar-item-top{
-	@include toolbar-item(-674px,-736px);
+.toolbar-text{
+	top:$toolbar-size;
+	background-color:#98a1a6;
+	padding-top:12px;
+	font-size:12px;
+	line-height:1.2;
 }
 .toolbar-layer{
-	/*二维码*/
-	position:absolute;  //相对于父元素的绝对定位
-	right:$toolbar-size - 6;  //距离右侧的宽度，运算符两边要有空格
+	position:absolute;
+	right:$toolbar-size - 6;
 	bottom:-10px;
 	width:172px;
-	@include opacity(0);  //透明度为0
+	background-image: url("../img/toolbar_img.png");
+	background-repeat: no-repeat;
+	@include opacity(0);
 	@include transform-origin(95% 95%);
-	//transform:scale(0.01);
-	@include scale(scale(0.01));    //最小  
-	@include transition(all 0.5s);  //在这里all包括透明度，大小的变化
+	@include scale(scale(0.01));
+	@include transition(all 0.6s);
+}
+.toolbar-layer-weixin{
+	height:212px;
+	background-position: 0 0;
+}
+.toolbar-layer-app{
+	height:194px;
+	background-position: 0 -222px;
 }

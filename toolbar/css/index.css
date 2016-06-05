@@ -1,29 +1,75 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?9020bd");
+  src: url("fonts/icomoon.eot?9020bd#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?9020bd") format("truetype"), url("fonts/icomoon.woff?9020bd") format("woff"), url("fonts/icomoon.svg?9020bd#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-quill:before {
+  content: "\e907";
+}
+
+.icon-mobile:before {
+  content: "\e958";
+}
+
+.icon-bubbles:before {
+  content: "\e96c";
+}
+
+.icon-arrow-up2:before {
+  content: "\ea3a";
+}
+
+.toolbar-item, .toolbar-btn, .toolbar-icon, .toolbar-text {
+  width: 52px;
+  height: 52px;
+}
+
+.toolbar-icon, .toolbar-text {
+  position: absolute;
+  left: 0;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: top 0.6s;
+  -moz-transition: top 0.6s;
+  -ms-transition: top 0.6s;
+  -o-transition: top 0.6s;
+  transition: top 0.6s;
+}
+
 .toolbar {
-  /*a标签的容器*/
   position: fixed;
   left: 50%;
   bottom: 5px;
   margin-left: -26px;
 }
 
-.toolbar-item, .toolbar-layer {
-  background-image: url("../img/toolbar.png");
-  background-repeat: no-repeat;
-}
-
 .toolbar-item {
-  /*a标签*/
   position: relative;
   display: block;
-  width: 52px;
-  height: 52px;
   margin-top: 1px;
-  -webkit-transition: background-position 0.5s;
-  -moz-transition: background-position 0.5s;
-  -ms-transition: background-position 0.5s;
-  -o-transition: background-position 0.5s;
-  transition: background-position 0.5s;
+}
+.toolbar-item:hover .toolbar-icon {
+  top: -52px;
+}
+.toolbar-item:hover .toolbar-text {
+  top: 0;
 }
 .toolbar-item:hover .toolbar-layer {
   opacity: 1;
@@ -35,48 +81,36 @@
   transform: scale(1);
 }
 
-.toolbar-item-weixin {
-  background-position: 0 -798px;
-}
-.toolbar-item-weixin:hover {
-  background-position: 0 -860px;
-}
-.toolbar-item-weixin .toolbar-layer {
-  height: 212px;
-  background-position: 0 0;
+.toolbar-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
 }
 
-.toolbar-item-feedback {
-  background-position: 0 -426px;
-}
-.toolbar-item-feedback:hover {
-  background-position: 0 -488px;
-}
-
-.toolbar-item-app {
-  background-position: 0 -550px;
-}
-.toolbar-item-app:hover {
-  background-position: 0 -612px;
-}
-.toolbar-item-app .toolbar-layer {
-  height: 194px;
-  background-position: 0 -222px;
+.toolbar-icon {
+  top: 0;
+  background-color: #d0d6d9;
+  /*图标字体可以像文字一样处理*/
+  font-size: 30px;
+  line-height: 52px;
 }
 
-.toolbar-item-top {
-  background-position: 0 -674px;
-}
-.toolbar-item-top:hover {
-  background-position: 0 -736px;
+.toolbar-text {
+  top: 52px;
+  background-color: #98a1a6;
+  padding-top: 12px;
+  font-size: 12px;
+  line-height: 1.2;
 }
 
 .toolbar-layer {
-  /*二维码*/
   position: absolute;
   right: 46px;
   bottom: -10px;
   width: 172px;
+  background-image: url("../img/toolbar_img.png");
+  background-repeat: no-repeat;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transform-origin: 95% 95%;
@@ -89,9 +123,19 @@
   -ms-transform: scale(0.01);
   -o-transform: scale(0.01);
   transform: scale(0.01);
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.toolbar-layer-weixin {
+  height: 212px;
+  background-position: 0 0;
+}
+
+.toolbar-layer-app {
+  height: 194px;
+  background-position: 0 -222px;
 }
