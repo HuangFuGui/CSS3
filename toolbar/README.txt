@@ -2,6 +2,7 @@
 	将sass编译成css   koala工具的使用
 	koala下载：http://koala-app.com/index-zh.html
 	新建filename.scss的文件并将其拖拽到koala软件中，实时将sass编译为css
+	@extend  ----->  Sass继承属性
 
 2.requirejs:
 	js模块化管理！
@@ -19,3 +20,5 @@
 		background-color:#d0d6d9;
 		font-size:30px;
 		line-height:$toolbar-size;
+
+5.返回顶部js插件：
