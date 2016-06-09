@@ -1,0 +1,45 @@
+@mixin transition($transition){
+	-webkit-transition:$transition;
+	-moz-transition:$transition;
+	-ms-transition:$transition;
+	-o-transition:$transition;
+	transition:$transition;
+}
+
+@mixin transition-delay($delay){
+	-webkit-transition-delay:$delay;
+	-moz-transition-delay:$delay;
+	-ms-transition-delay:$delay;
+	-o-transition-delay:$delay;
+	transition-delay:$delay;
+}
+
+@mixin transform-origin($transform-origin){
+	-webkit-transform-origin:$transform-origin;
+	-moz-transform-origin:$transform-origin;
+	-ms-transform-origin:$transform-origin;
+	-o-transform-origin:$transform-origin;
+	transform-origin:$transform-origin;
+}
+
+@mixin transform($transform){
+	-webkit-transform:$transform;
+	-moz-transform:$transform;
+	-ms-transform:$transform;
+	-o-transform:$transform;
+    transform:$transform;
+}
+
+@mixin toolbar-item($pos,$hoverPos){
+	//改变背景图片的位置，显示相应小图片
+	background-position: 0 $pos;
+	//鼠标移到各a标签上换背景位置
+	&:hover{
+		background-position: 0 $hoverPos;
+	}
+}
+@mixin opacity($opacity){
+	opacity:$opacity;
+	filter:alpha(opacity=$opacity * 100);   //IE兼容写法
+}
+

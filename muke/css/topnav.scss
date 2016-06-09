@@ -1,0 +1,415 @@
+
+.topNav{
+	width:100%;
+	height:60px;
+	background-color:#fff;
+	position:relative;
+	z-index:100;
+	.topNavLeft{
+		position:relative;
+		width:50%;
+		height:60px;
+		float:left;
+		background-color:#000;
+		ul{
+			position:absolute; //***absolute is relative to .topNavLeft(its father element)
+			width:70%;
+			left:25%;
+			top:-16px;
+
+			li{	
+				float:left;	
+				width:15%;	
+				height:60px;
+				line-height:60px;
+				text-align:center;
+				@include transition(all 400ms);
+				&:hover{
+					background-color: rgba(196,196,196,0.4);
+					cursor: pointer;
+					a{
+						color:rgba(255,255,255,1);
+					}
+				}
+				a{
+					
+					font-size:15px;
+					color:#fff;
+					line-height:30px;
+					text-align:center;
+				}
+
+			}
+			li:nth-of-type(1){
+				position:relative;
+				.extraDiv{
+					position:absolute;
+					top:70px;
+					left:0px;
+					width:700px;
+					height:420px;
+					//background-image:url("http://demo.cssmoban.com/cssthemes3/ft5_13_outline/images/bg_2.jpg");
+					@include opacity(0);
+					background:-webkit-linear-gradient(top left,rgba(0,0,0,0.7),rgba(0,0,0,0)); // 颜色渐变
+					@include transition(all 500ms);
+					.text1{
+						position:absolute;
+						top:80px;
+						left:20px;
+						width:400px;
+						height:200px;
+						font-size:35px;
+						font-weight:600;
+						color:#fff;
+						text-shadow:0px 2px 0px #7a7a7a;
+						font-family: "Montserrat", arial, sans-serif;
+						@include opacity(0);
+						@include transition(all 800ms ease-in);
+					}
+					.text2{
+						position:absolute;
+						top:240px;
+						left:20px;
+						width:400px;
+						height:100px;
+						font-size:16px;
+						color:#fff;
+						font-family: "Montserrat", arial, sans-serif;
+						line-height:1.5;
+						text-align:none;
+						@include opacity(0);
+						@include transition(all 800ms ease-in);
+						@include transition-delay(300ms);
+					}
+					.extraDiv_button{
+						position:absolute;
+						top:300px;
+						left:40px;
+						width:280px;
+						height:60px;
+						border-radius:50px;
+						text-align:center;
+						font-size:30px;
+						line-height:2.1;
+						color:#fff;
+						background:-webkit-linear-gradient(left,#00d9d6,#42969b);
+						box-shadow:0px 5px 0px #79c0c4;
+						&:hover{
+							opacity:0.8;
+						}
+					}
+					.extraDiv_phone{
+						position:absolute;
+						top:55px;
+						right:-110px;
+						img{
+							width:45%;
+							height:45%;
+						}
+						@include opacity(0);
+						@include transition(all 800ms ease-in);
+						@include transition-delay(50ms);
+					}
+				}
+				&:hover{
+					.extraDiv{
+						@include opacity(1);
+						.text1{
+							@include opacity(1);
+							@include transform(translateY(-50px));
+						}
+						.text2{
+							@include opacity(1);
+							@include transform(translateY(-50px));
+						}
+						.extraDiv_phone{
+							@include opacity(1);
+							@include transform(translateY(-50px));
+						}
+					}			
+				}
+			}
+		}
+	}
+	.topNavRight{
+		position:relative;
+		width:50%;
+		height:60px;
+		float:right;
+		background-color: #000;
+		.input_area{
+			width:32%;
+			height:60px;
+			margin-left:20%;
+			margin-top:0px;
+			border:solid 0px #000;	
+			input{		
+				float:left;
+				line-height:30px;				
+				background-color: #000;
+				box-sizing: border-box;
+				width:88%;
+				margin-top:15px;
+				border:solid 0px #000;	
+				border-bottom: 1px solid #fff;
+				color:#fff;
+				outline:none; //take out the border showed after click
+				@include transform-origin(right);
+				@include transform(scale(0.01));
+				@include transition(transform 200ms);
+			}
+			span{
+				float:right;
+				display:block;
+				width:10%;
+				margin-top:15px;
+				font-size:20px;
+				color:#fff;
+				position:relative;
+				top:5px;
+				color:#b9b9b9;
+				&:hover{
+					cursor:pointer;
+					color:#fff;
+				}
+			}
+		}
+
+		ul{
+			position:absolute;//***absolute is relative to .topNavLeft(its father element)
+			top:-16px;
+			left:54%;
+			display:block;
+			width:30%;
+			height:60px;
+			background-color:#000;
+			li{
+				height:60px;
+				float:left;
+				width:33%;
+				text-align:center;
+				@include transition(all 400ms);
+				&:hover{
+					background-color: rgba(196,196,196,0.4);
+					cursor: pointer;
+					a{
+						color:rgba(255,255,255,1);
+					}
+				}
+				a{
+					display:block;
+					color:#fff;
+					font-size:20px;
+					line-height:60px;
+					color:#b9b9b9;
+					@include transition(all 400ms);
+				}
+			}
+			#users_icon{		
+				position:relative;
+				.users_wechat{
+					position:absolute;
+					top:70px;
+					left:-50px;
+					width:170px;
+					height:240px;
+					@include transform-origin(top);
+					@include transform(scale(0.01));
+					opacity:0;
+					@include transition(all 400ms);
+					img{
+						width:170px;
+						height:240px;
+					}
+				}
+			}
+			#users_icon:hover{
+				.users_wechat{
+					@include transform(scale(1));
+					opacity:1;
+				}
+			}
+		}
+
+		.head{
+			.user_detailFade{
+				position:absolute;
+				left:-100px;
+				top:0px;
+				width:500px;
+				height:100px;
+				background-color:#fff;
+				opacity:0.2;
+				display:block;
+				@include transform(skewX(-30deg));
+				@include transition(left 800ms ease-in);
+			}
+			position:absolute;
+			left:91%;
+			top:0px;
+			width:35px;
+			height:35px;
+			border:solid 0px;
+			background-color:#000;
+			margin-top:12.5px;
+			&:hover{
+				cursor:pointer;
+				.user_detail{
+					opacity:1;
+					@include transform(scale(1));
+				}
+				.user_detailFade{
+					//display:none;
+					left:500px;
+				}
+
+			}
+			img{
+				width:35px;
+				height:35px;
+				border-radius:35px;
+			}
+			.user_detail{
+				position:absolute;
+				left:-250px;
+				top:55px;
+				width:300px;
+				height:220px;
+				background-color: #fff;
+				opacity:0;
+				overflow:hidden;
+				@include transform-origin(top right);
+				@include transform(scale(0.01));
+				@include transition(all 400ms);
+				.user_detail_div1{
+					position:relative;
+					background-image: url("http://static.mukewang.com/static/img/common/user_card_top.png");
+					height:100px;
+					color:#fff;
+					img{
+						width:60px;
+						height:60px;
+						border-radius:60px;
+						margin-left:20px;
+						margin-top:20px;
+						border:solid 3px #fff;
+					}
+					.user_detail_div1_username{
+						position:absolute;
+						top:30px;
+						left:95px;
+						font-size:30px;
+
+					}
+					.user_detail_div1_set{
+						position:absolute;
+						top:10px;
+						left:265px;
+						opacity:0.7;
+						a{
+							display:block;
+							background-image: url("../src/set.png");
+							width:16px;
+							height:16px;
+						}
+						&:hover{
+							opacity:1;
+						}
+					}
+					.user_detail_div1_createTime{
+						position:absolute;
+						top:70px;
+						left:190px;
+						font-size:10px;
+						opacity:0.9;
+					}
+				}
+				.user_detail_div2{
+					position:relative;
+					border-bottom:solid 1px #e2e2e2;
+					height:80px;
+					img{
+						position:absolute;
+						top:25px;
+						left:30px;
+						width:12px;
+						height:12px;
+						opacity:0.7;
+					}
+					.user_detail_div2_item{
+						position:absolute;
+						top:25px;
+						left:60px;
+						color:#7a7a7a;
+						opacity:0.9;
+						font-size:12px;
+						font-weight:600;
+					}
+					.user_detail_div2_schedule{
+						position:absolute;
+						top:50px;
+						left:60px;
+						color:#7a7a7a;
+						opacity:0.9;
+						font-size:10px;
+					}
+					.user_detail_div2_continue{
+						position:absolute;
+						top:55px;
+						left:250px;
+						font-size:13px;
+						a{
+							color:red;
+							&:hover{
+								text-decoration:underline;
+							}
+						}
+					}
+				}
+				.user_detail_div3{
+					position:relative;
+					font-size:15px;				
+					.user_detail_div3_question{
+						position:absolute;
+						left:20px;
+						top:10px;
+					}
+					.user_detail_div3_note{
+						position:absolute;
+						left:90px;
+						top:10px;
+					}
+					.user_detail_div3_logout{
+						position:absolute;
+						left:250px;
+						top:10px;
+					}
+					span{
+						a{
+							color:#7a7a7a;
+							&:hover{
+								color:#ff0012;
+							}
+						}					
+					}
+				}
+			}
+		}
+	}
+	.muke_a{
+		display:block;  //block element
+		width:25%;
+		height:60px;
+		margin-left:2%;
+		font-size:40px;
+		color:#fff;
+		background-color: #000;
+		line-height:60px;
+		text-align:center;
+		img{
+			width:100%;
+			height:60px;
+		}
+	}
+}
+
