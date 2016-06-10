@@ -5,7 +5,7 @@ requirejs.config({
 });
 
 
-
+/*
 requirejs(['jquery','scrollto'],function($,scrollto){
 	
 	var scroll = new scrollto.ScrollTo({
@@ -16,4 +16,23 @@ requirejs(['jquery','scrollto'],function($,scrollto){
 	$(".gotoLearnContainer").on('click',function(){
 		scroll.move();
 	});
-});
+
+});*/
+
+requirejs(['jquery','backtop'],function($,backtop){
+
+	/*var bt = new backtop.BackTop($(".gotoLearnContainer"),{
+		actionMode:'move',
+		pos:0,
+		dest:0,
+		speed:2000
+	});*/
+
+	$(".test").backtop({
+		actionMode:'move',
+		pos:0,
+		dest:0,
+		speed:1000
+	});
+
+})
