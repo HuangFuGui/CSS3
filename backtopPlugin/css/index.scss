@@ -1,0 +1,45 @@
+
+@import "mixin";
+
+a{
+	text-decoration:none;
+}
+.gotoLearnContainer{
+	width:280px;
+	height:60px;	
+	position:fixed;
+	right:40%;
+	bottom:15%;	
+	.gotoLearn{	
+		height:60px;
+		margin:0 auto;
+		text-align:center;
+		font-size:35px;
+		line-height:1.7;
+		background-color: #00d9d6;
+		box-shadow:0px 7px 0px #00d9d6;
+		overflow:hidden;
+		color:#fff;
+		opacity:0.8;
+		border-radius:50px;
+		transition:all 500ms;
+		&:hover{
+			cursor:pointer;
+			opacity:1;
+			box-shadow:0px 7px 0px #91edec;
+			.itsFade{
+				left:315px;
+			}
+		}
+	}
+	.itsFade{
+		margin:0 auto;
+		background-color: #fff;
+		top:-5px;
+		left:0px;
+		opacity:0.5;
+		@include transform(skewX(-35deg));
+		@include transform-origin(left top);		
+		@include transition(all 200ms ease-in);
+	}
+}
